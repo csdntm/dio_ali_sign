@@ -25,7 +25,8 @@ void main() {
   dio.interceptors.add(AliSignInterceptors(
       gatewayHosts: Platform.environment['gatewayHosts']?.split(","),
       gatewayAppkey: Platform.environment['gatewayAppkey'],
-      gatewayAppsecret: Platform.environment['gatewayAppsecret']));
+      gatewayAppsecret: Platform.environment['gatewayAppsecret'],
+      gatewayStage: ""));
   test('test get request', () async {
     var response = await dio.get(urlGet);
     expect(response.data, contains('url'));

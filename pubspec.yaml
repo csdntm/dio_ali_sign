@@ -2,7 +2,7 @@ name: dio_ali_sign
 description: 用于阿里网关签名的 dio 拦截器
 version: 1.0.0
 
-homepage: https://csdn.net
+homepage: https://github.com/csdntb/dio_ali_sign
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

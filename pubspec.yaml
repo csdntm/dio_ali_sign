@@ -1,8 +1,8 @@
 name: dio_ali_sign
-description: 用于阿里网关签名的 dio 拦截器
-version: 1.0.0
+description: dio_ali_sign is a Dio interceptor that sign aliyun api gateway request,easy to use.
+version: 1.0.5
 
-homepage: https://github.com/csdntb/dio_ali_sign
+homepage: https://github.com/csdntm/dio_ali_sign
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

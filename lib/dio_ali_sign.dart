@@ -4,6 +4,11 @@ import 'package:ali_cloudapi_sign/ali_cloudapi_sign.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
+/// dio Interceptor 给通过网关的请求加上签名
+/// @required [gatewayHosts] 网关域名，可以是多个域名
+/// @required [gatewayAppkey] Appkey
+/// @required [gatewayAppsecret] Appsecret
+/// optional [gatewayStage] PRE/TEST ，为空是表示生产环境
 class AliSignInterceptors extends InterceptorsWrapper {
   final List<String> gatewayHosts;
   final String gatewayAppkey;

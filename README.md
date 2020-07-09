@@ -1,4 +1,4 @@
-# dio_ali_sign
+# dio_ali_sign [![Pub](https://img.shields.io/pub/v/dio_ali_sign.svg?style=flat-square)](https://pub.dartlang.org/packages/dio_ali_sign)
 
 用于阿里网关签名的 dio 拦截器
 

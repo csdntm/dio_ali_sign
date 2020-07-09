@@ -2,7 +2,7 @@ library dio_ali_sign;
 
 import 'package:ali_cloudapi_sign/ali_cloudapi_sign.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 
 /// dio Interceptor 给通过网关的请求加上签名
 /// @required [gatewayHosts] 网关域名，可以是多个域名
@@ -21,6 +21,9 @@ class AliSignInterceptors extends InterceptorsWrapper {
     @required this.gatewayAppsecret,
     this.gatewayStage = "",
   }) {
+    assert(gatewayHosts.length > 0);
+    assert(gatewayAppkey.length > 0);
+    assert(gatewayAppsecret.length > 0);
     AliSign.gatewayHosts = this.gatewayHosts;
     AliSign.gatewayAppkey = this.gatewayAppkey;
     AliSign.gatewayAppsecret = this.gatewayAppsecret;

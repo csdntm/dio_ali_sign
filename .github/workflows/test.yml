@@ -2,21 +2,26 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     container:
-      image:  google/dart:latest
+      image: google/dart:latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: pub get
-    - name: Run tests
-      run: pub run test
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pub get
+      - name: Run tests
+        env:
+          gatewayHosts: ${{ secrets.GATEWAYHOSTS }}
+          gatewayAppkey: ${{ secrets.GATEWAYAPPKEY }}
+          gatewayAppsecret: ${{ secrets.GATEWAYAPPSECRET }}
+          urlGet: ${{ secrets.URLGET }}
+          urlPost: ${{ secrets.URLPOST }}
+        run: pub run test

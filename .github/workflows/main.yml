@@ -17,6 +17,8 @@ jobs:
           gatewayHosts: ${{ secrets.GATEWAYHOSTS }}
           gatewayAppkey: ${{ secrets.GATEWAYAPPKEY }}
           gatewayAppsecret: ${{ secrets.GATEWAYAPPSECRET }}
+          urlGet: ${{ secrets.URLGET }}
+          urlPost: ${{ secrets.URLPOST }}
         with:
           credential: ${{ secrets.PUB_CREDENTIAL_JSON }}
           flutter_package: false

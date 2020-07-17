@@ -10,6 +10,6 @@
 
 - 支持 required 参数
 
-## [1.0.10]
+## [1.1.0]
 
 - 配置 github workflow

@@ -19,15 +19,15 @@ class AliSignInterceptors extends InterceptorsWrapper {
     @required this.gatewayHosts,
     @required this.gatewayAppkey,
     @required this.gatewayAppsecret,
-    this.gatewayStage = "",
+    this.gatewayStage = '',
   }) {
-    assert(gatewayHosts.length > 0);
-    assert(gatewayAppkey.length > 0);
-    assert(gatewayAppsecret.length > 0);
-    AliSign.gatewayHosts = this.gatewayHosts;
-    AliSign.gatewayAppkey = this.gatewayAppkey;
-    AliSign.gatewayAppsecret = this.gatewayAppsecret;
-    AliSign.gatewayStage = this.gatewayStage;
+    assert(gatewayHosts.isNotEmpty);
+    assert(gatewayAppkey.isNotEmpty);
+    assert(gatewayAppsecret.isNotEmpty);
+    AliSign.gatewayHosts = gatewayHosts;
+    AliSign.gatewayAppkey = gatewayAppkey;
+    AliSign.gatewayAppsecret = gatewayAppsecret;
+    AliSign.gatewayStage = gatewayStage;
   }
 
   @override
@@ -36,7 +36,7 @@ class AliSignInterceptors extends InterceptorsWrapper {
     options.responseType = ResponseType.json;
 
     if (AliSign.gatewayHosts.contains(options.uri.host)) {
-      Map<String, String> signHeaders =
+      var signHeaders =
           AliSign.creatAliGatewaySign(options.method, options.uri);
 
       options.headers.addAll(signHeaders);

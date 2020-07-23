@@ -10,6 +10,7 @@
 
 - 支持 required 参数
 
-## [1.1.0]
+## [1.1.1]
 
 - 配置 github workflow
+- 降低meta版本

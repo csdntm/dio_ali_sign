@@ -9,8 +9,8 @@ environment:
 
 dependencies:
   dio: ^3.0.9
-  meta: ^1.2.1
-  ali_cloudapi_sign: ^1.0.0
+  meta: ^1.1.8
+  ali_cloudapi_sign: ^1.0.12
 
 dev_dependencies:
   test: ^1.15.2

@@ -32,12 +32,14 @@ class AliSignInterceptors extends InterceptorsWrapper {
 
   @override
   Future onRequest(RequestOptions options) {
-    options.contentType = Headers.jsonContentType;
-    options.responseType = ResponseType.json;
-
     if (AliSign.gatewayHosts.contains(options.uri.host)) {
-      var signHeaders =
-          AliSign.creatAliGatewaySign(options.method, options.uri);
+      var signHeaders;
+      if (options.data is FormData) {
+        signHeaders = AliSign.creatAliGatewaySign(options.method, options.uri,
+            formData: options.data);
+      } else {
+        signHeaders = AliSign.creatAliGatewaySign(options.method, options.uri);
+      }
 
       options.headers.addAll(signHeaders);
     }

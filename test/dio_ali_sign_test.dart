@@ -36,4 +36,16 @@ void main() {
     var response = await dio.post(urlPost, data: {'a': '1'});
     expect(response.data, contains('url'));
   });
+
+  test('test post file', () async {
+    var formData = FormData.fromMap({
+      'name': 'wendux',
+      'age': 25,
+      'file': await MultipartFile.fromFile('./pubspec.yaml',
+          filename: 'pubspec.yaml')
+    });
+    var response = await dio.post(urlPost, data: formData);
+
+    expect(response.data, contains('files'));
+  });
 }

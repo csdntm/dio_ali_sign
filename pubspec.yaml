@@ -1,6 +1,6 @@
 name: dio_ali_sign
 description: dio_ali_sign is a Dio interceptor that sign aliyun api gateway request,easy to use.
-version: 1.1.1
+version: 1.1.2
 
 homepage: https://github.com/csdntm/dio_ali_sign
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   dio: ^3.0.9
   meta: ^1.1.8
-  ali_cloudapi_sign: ^1.0.12
+  ali_cloudapi_sign: ^1.0.13
 
 dev_dependencies:
   test: ^1.15.2

@@ -14,7 +14,7 @@ packages:
       name: ali_cloudapi_sign
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.12"
+    version: "1.0.13"
   analyzer:
     dependency: transitive
     description:
